@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>МОАИС-1 КубГУ — Сайт-визитка команды | Волга.ТОП 2026</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <!-- Шапка сайта: логотип, название, девиз и навигация -->
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <a href="#top" class="brand" aria-label="На главную">
+          <svg
+            class="brand-logo"
+            width="40"
+            height="40"
+            viewBox="0 0 64 64"
+            fill="none"
+            aria-hidden="true"
+          >
+            <rect width="64" height="64" rx="16" fill="#4B5563" />
+            <path
+              d="M16 20L27 46L32 34L37 46L48 20"
+              stroke="#FFFFFF"
+              stroke-width="5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <circle cx="32" cy="18" r="3.5" fill="#D1D5DB" />
+          </svg>
+          <div class="brand-text">
+            <span class="brand-name" id="header-team-name">МОАИС-1 КубГУ</span>
+            <span class="brand-motto" id="header-team-motto"></span>
+          </div>
+        </a>
+
+        <div class="header-actions">
+          <button
+            type="button"
+            class="menu-toggle"
+            id="menu-toggle"
+            aria-expanded="false"
+            aria-controls="main-nav"
+            aria-label="Открыть меню"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+
+        <nav class="main-nav" id="main-nav" aria-label="Основная навигация">
+          <a href="#about">О команде</a>
+          <a href="#members">Участники</a>
+          <a href="#skills">Навыки</a>
+          <a href="#projects">Проекты</a>
+          <a href="#contacts">Контакты</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Раздел 1: Главный экран и информация о команде -->
+      <section class="hero section" id="about">
+        <div class="container">
+          <div class="hero-card">
+            <div class="hero-badge" id="hero-university"></div>
+            <h1 class="hero-title" id="hero-title"></h1>
+            <p class="hero-motto" id="hero-motto"></p>
+
+            <div class="about-grid">
+              <div class="about-block">
+                <h2>Кто мы</h2>
+                <p id="about-intro"></p>
+                <p class="about-meta" id="about-faculty"></p>
+              </div>
+              <div class="about-block">
+                <h2>Почему участвуем в «Волга.ТОП»</h2>
+                <p id="about-motivation" class="editable-slot"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Раздел 2: Карточки участников (рендерятся из src/data/team.json) -->
+      <section class="section" id="members">
+        <div class="container">
+          <div class="section-head">
+            <h2>Участники команды</h2>
+            <p class="section-subtitle">
+              Нажмите на карточку участника, чтобы посмотреть подробную информацию и вклад в проект.
+            </p>
+          </div>
+          <div class="members-grid" id="members-grid"></div>
+        </div>
+      </section>
+
+      <!-- Раздел 3: Навыки команды -->
+      <section class="section section-alt" id="skills">
+        <div class="container">
+          <div class="section-head">
+            <h2>Навыки команды</h2>
+            <p class="section-subtitle">
+              Языки, технологии и инструменты, с которыми мы работаем.
+            </p>
+          </div>
+          <div class="skills-grid" id="skills-grid"></div>
+        </div>
+      </section>
+
+      <!-- Раздел 4: Проекты и идеи -->
+      <section class="section" id="projects">
+        <div class="container">
+          <div class="section-head">
+            <h2>Проекты и идеи</h2>
+            <p class="section-subtitle">
+              Текущие разработки и идеи для реализации на хакатоне.
+            </p>
+          </div>
+          <div class="projects-grid" id="projects-grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Раздел 5: Контакты и подвал страницы -->
+    <footer class="site-footer" id="contacts">
+      <div class="container footer-grid">
+        <div>
+          <h2 class="footer-title">Контакты команды</h2>
+          <p class="footer-text" id="footer-university"></p>
+          <p class="footer-contact">
+            Связь через капитана команды:
+            <strong id="captain-contact"></strong>
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h3>Репозиторий и навигация</h3>
+          <ul>
+            <li>
+              <a id="repo-link" href="https://gitverse.ru/" target="_blank" rel="noopener noreferrer">
+                Репозиторий команды на GitVerse
+              </a>
+            </li>
+            <li><a href="#members">Состав команды</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <span id="footer-copy"></span>
+        <span>Отборочное задание «Волга.ТОП 2026»</span>
+      </div>
+    </footer>
+
+    <!-- Модальное окно с деталями участника (интерактивный элемент) -->
+    <div class="modal-backdrop" id="member-modal" hidden>
+      <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-name">
+        <button type="button" class="modal-close" id="modal-close" aria-label="Закрыть окно">
+          &times;
+        </button>
+        <div class="modal-header">
+          <div class="avatar avatar-lg" id="modal-avatar"></div>
+          <div>
+            <h3 id="modal-name"></h3>
+            <p class="member-role" id="modal-role"></p>
+            <p class="member-group" id="modal-group"></p>
+          </div>
+        </div>
+        <div class="modal-body">
+          <p id="modal-bio"></p>
+          <div class="modal-section">
+            <h4>Навыки</h4>
+            <div class="tags" id="modal-skills"></div>
+          </div>
+          <p class="modal-contact">
+            <strong>Контакт:</strong> <span id="modal-contact"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="./src/data/team.js"></script>
+    <script src="./src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+node_modules
+dist
+.git
+.gitignore
+ai-sessions.zip
+*.log
+.env
+.env.*
+README.md
+docs
