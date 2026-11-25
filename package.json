@@ -2,7 +2,7 @@
   "name": "volga-top-team-site",
   "version": "1.0.0",
   "private": true,
-  "description": "Сайт-визитка команды КубГУ (МОАИС) для отборочного этапа хакатона «Волга.ТОП 2026»",
+  "description": "Сайт-визитка команды Krytyae (КубГУ, МОАИС) для отборочного этапа хакатона «Волга.ТОП 2026»",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
